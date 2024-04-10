@@ -10,12 +10,20 @@ let food = new Food( boardSize, snake.getCoordinates() );
 
 const intervalId = setInterval( () => {
 
-    snake.move(boardSize);
+    const newHead = snake.calculateNewHead(boardSize);
 
     const snakeCoordinates = snake.getCoordinates();
     const foodCoordinates = food.y + '-' + food.x
 
-    if ( foodCoordinates == snakeCoordinates[0] ) {
+    if ( snakeCoordinates.includes(newHead) ) {
+        gameBoard.gameOver();
+        clearInterval(intervalId);
+    }
+    else {
+        snake.unshift(newHead);
+    }
+
+    if( foodCoordinates == snakeCoordinates[0] ) {
         food = new Food( boardSize, snakeCoordinates) ;
     }
     else {
@@ -23,4 +31,4 @@ const intervalId = setInterval( () => {
     }
     gameBoard.draw( snakeCoordinates, food );
 
-}, 250);
+}, 200);

@@ -32,7 +32,7 @@ class Snake {
         return this.coordinates;
     }
 
-    move ( boardSize ) {
+    calculateNewHead ( boardSize ) {
 
         let [y, x] = this.coordinates[0].split('-');
         //console.log(y, x);
@@ -71,10 +71,11 @@ class Snake {
             break;
         }
 
-        const c = y + '-' + x;
-        this.coordinates.unshift(c);
-        //this.coordinates.pop();
+        return y + '-' + x;
+    }
 
+    unshift ( c ) {
+        this.coordinates.unshift(c);
     }
 
     pop () {
