@@ -27,7 +27,8 @@ class GameBoard {
 
                 const foodCoordinates = food.y +'-' + food.x;
                 if ( id == foodCoordinates ){
-                    cellTd.classList.add('food');
+                    cellTd.innerText = food.getEmoji();
+                    //cellTd.classList.add('food');
                 }
 
                 rowTr.append(cellTd);
