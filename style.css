@@ -7,11 +7,11 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
   }
 
 #game-board {
     border-collapse: collapse;
-    font-size: 18px;
 }
 
 #game-board td {
@@ -20,13 +20,22 @@ body {
     height: 25px;
 }
 
+.score-container {
+  margin-bottom: 1rem;
+  display: flex;
+}
+
+.snake-head {
+  font-size: 18px;
+}
+
 .snake {
- background-color: violet;
- border-radius: 40%;
+ font-size: 18px;
 }
 
 .food {
   background-color: red;
+  font-size: 20px;
  }
 
  .hidden {
