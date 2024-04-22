@@ -25,7 +25,24 @@ class Snake {
                     this.direction = 'r';
                     break;
             };
-        })
+        }),
+        up.addEventListener('click', () => {
+            // Change the direction property of the snake to 'd'
+            this.direction = 'u';
+        }),
+        down.addEventListener('click', () => {
+            // Change the direction property of the snake to 'd'
+            this.direction = 'd';
+        }),
+        left.addEventListener('click', () => {
+            // Change the direction property of the snake to 'd'
+            this.direction = 'l';
+        }),
+        right.addEventListener('click', () => {
+            // Change the direction property of the snake to 'd'
+            this.direction = 'r';
+        });
+
     }
 
     getCoordinates () {
